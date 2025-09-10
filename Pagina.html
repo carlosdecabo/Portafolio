@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos De Cabo | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        }
+        #hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Hero Section with Vanta.js Background -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 z-0" id="vanta-bg"></div>
+        <div class="container mx-auto px-6 z-10">
+            <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">Carlos De Cabo</h1>
+                <h2 class="text-2xl md:text-3xl gradient-text font-semibold mb-6">Ingeniero en Sistemas & Especialista en Automatización</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-8">Transformando procesos empresariales mediante soluciones innovadoras de automatización, IA y desarrollo Low-Code.</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#about" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition">Conóceme</a>
+                    <a href="#contact" class="px-6 py-3 border border-white rounded-full font-medium hover:bg-white hover:text-gray-900 transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#about" class="animate-bounce">
+                <i data-feather="chevron-down" class="w-10 h-10"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">CDC</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link">Sobre mí</a>
+                    <a href="#experience" class="nav-link">Experiencia</a>
+                    <a href="#skills" class="nav-link">Habilidades</a>
+                    <a href="#projects" class="nav-link">Proyectos</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Sobre <span class="gradient-text">Mí</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center" data-aos="fade-right">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500">
+                        <img src="http://imgfz.com/i/AJQRdGI.png" alt="Carlos De Cabo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold mb-4">Ingeniero en Sistemas con pasión por la automatización e IA</h3>
+                    <p class="text-lg mb-6">
+                        Ingeniero en Sistemas con sólida experiencia en automatización de procesos empresariales, especializado en 
+                        Python y en la implementación de soluciones de inteligencia artificial en entornos productivos y regulados. 
+                        Experto en RPA (UiPath, Power Automate, Rocketbot), Power Platform y cloud computing (Azure, AWS).
+                      </p>
+                      <p class="text-lg mb-6">
+                        He liderado proyectos end-to-end en banca, seguros y sector público, diseñando arquitecturas híbridas y 
+                        escalables que integran automatización, machine learning y APIs. Mi propuesta de valor: transformar procesos 
+                        manuales en soluciones digitales inteligentes que optimizan eficiencia, reducen costos y aceleran la 
+                        transformación digital.
+                      </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2 text-blue-400"></i>
+                            <span>Madrid, España</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="mail" class="mr-2 text-blue-400"></i>
+                            <span>carloseduardodecabo@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-feather="phone" class="mr-2 text-blue-400"></i>
+                            <span>+54 11 2389 1379</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Mi <span class="gradient-text">Experiencia</span></h2>
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute left-0 md:left-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2"></div>
+                
+                <!-- Banco ICBC -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold">Banco ICBC</h3>
+                            <p class="text-blue-400">Arquitecto de Soluciones</p>
+                            <p class="text-sm text-gray-400">Feb 2025 - Actualidad</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 relative timeline-item">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Desarrollo de soluciones empresariales con Power Platform</li>
+                                    <li>Implementación de arquitecturas Low-Code escalables</li>
+                                    <li>Diseño de automatizaciones RPA con Power Automate y UIPath</li>
+                                    <li>Gestión de bases de datos en Azure (SQL Database, Cosmos DB)</li>
+                                    <li>Aplicación de técnicas de IA y aprendizaje automático</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CFOTECH IT -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0 md:order-last">
+                            <h3 class="text-xl font-semibold">CFOTECH IT Global Services</h3>
+                            <p class="text-blue-400">Developer Power Platform / UiPath</p>
+                            <p class="text-sm text-gray-400">Jun 2024 - Feb 2025</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 relative timeline-item">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Desarrollo de bots de automatización con Copilot Studio</li>
+                                    <li>Implementación de procesos automatizados con RPA</li>
+                                    <li>Soluciones Low-Code/No-Code con Power Platform</li>
+                                    <li>Diseño y gestión de bases de datos en Azure</li>
+                                    <li>Consultoría técnica en automatización</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTRL365 -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold">CTRL365</h3>
+                            <p class="text-blue-400">Tech Specialist en Power Platform</p>
+                            <p class="text-sm text-gray-400">Feb 2023 - Jul 2024</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 relative timeline-item">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Conducción de iniciativas tecnológicas con Power Platform</li>
+                                    <li>Arquitectura de soluciones de hiperautomatización</li>
+                                    <li>Configuración de integración entre sistemas heterogéneos</li>
+                                    <li>Desarrollo de prototipos funcionales</li>
+                                    <li>Aplicación de modelos predictivos y NLP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Argontech -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0 md:order-last">
+                            <h3 class="text-xl font-semibold">Argontech</h3>
+                            <p class="text-blue-400">Líder Técnico / RPA Developer</p>
+                            <p class="text-sm text-gray-400">Feb 2019 - Feb 2023</p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-8 relative timeline-item">
+                            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Desarrollo de soluciones RPA con UIPath</li>
+                                    <li>Integración de bots con sistemas legacy</li>
+                                    <li>Automatización de procesos con mejoras de eficiencia del 50%</li>
+                                    <li>Gestión operativa de robots y monitoreo</li>
+                                    <li>Análisis técnico y funcional de procesos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Mis <span class="gradient-text">Habilidades</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-blue-500 bg-opacity-20 mr-4">
+                            <i data-feather="code" class="text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Técnicas</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Power Platform (Apps, Automate, BI, Dataverse)</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">UiPath / RPA</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Rocketbot</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Python</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">SQL & NoSQL (Azure SQL, CosmosDB, MongoDB)</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Django / FastAPI</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Microsoft Azure</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">REST APIs</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">AI Builder</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Copilot Studio</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">OpenAI / Azure OpenAI (LLMs, GPT)</span>
+                        <span class="skill-pill px-4 py-2 bg-blue-500 bg-opacity-20 rounded-full">Arquitectura de Soluciones Cloud & IA</span>
+                      </div>                                            
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-purple-500 bg-opacity-20 mr-4">
+                            <i data-feather="briefcase" class="text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Profesionales</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Automatización</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Arquitectura</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Low-Code</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">RPA</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">IA Generativa</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Cloud</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Transformación Digital</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Gobernanza de Datos</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Optimización de Procesos</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Gestión de Proyectos</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Consultoría</span>
+                        <span class="skill-pill px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full">Liderazgo</span>
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 rounded-full bg-green-500 bg-opacity-20 mr-4">
+                            <i data-feather="globe" class="text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Idiomas</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Español</span>
+                                <span>Nativo</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Inglés</span>
+                                <span>Intermedio (B1)</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Mis <span class="gradient-text">Proyectos</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - Automatización Bancaria con UiPath y N8N -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up">
+                    <img src="http://static.photos/finance/640x360/101" alt="RPA Bancario" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Automatización Bancaria con UiPath y N8N</h3>
+                        <p class="text-gray-400 mb-4">Plataforma híbrida que combina UiPath para RPA y N8N para orquestación de microservicios, procesando 25K transacciones/día con integración a sistemas core bancarios.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">UiPath</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">N8N</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Python</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">REST APIs</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">ABBYY OCR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Chatbot con Copilot -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/technology/640x360/102" alt="Chatbot IA" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Chatbot Corporativo con Copilot Studio</h3>
+                        <p class="text-gray-400 mb-4">Asistente virtual con IA generativa para RRHH, capaz de resolver 80% de consultas mediante integración con SharePoint, SAP y modelos de OpenAI.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Copilot Studio</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Azure OpenAI</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Power Virtual Agents</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Dataverse</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Automatización Power Platform -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/office/640x360/103" alt="Power Platform" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Solución Low-Code para Seguros</h3>
+                        <p class="text-gray-400 mb-4">Plataforma integral con Power Apps, 35 flujos automatizados y AI Builder para clasificación de reclamos, reduciendo tiempos de procesamiento en 65%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Power Apps</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Power Automate</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">AI Builder</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Rocketbot RPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Power Platform Retail -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up">
+                    <img src="http://static.photos/retail/640x360/104" alt="Power Platform Retail" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gestión Omnichannel Retail con Power Platform</h3>
+                        <p class="text-gray-400 mb-4">Solución unificada para gestión de inventario, ventas y CRM con Power Apps, Power BI y 20 flujos automatizados, aumentando eficiencia en 40%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Power Apps</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Power BI</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Dataverse</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Azure SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Integración Logística con UiPath y N8N -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/industry/640x360/105" alt="RPA Logística" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Integración Logística con UiPath y N8N</h3>
+                        <p class="text-gray-400 mb-4">Solución E2E que combina UiPath para automatización de procesos y N8N para integración de sistemas (ERP, WMS, TMS), reduciendo tiempos en 75%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">UiPath</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">N8N</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">SAP</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">SQL Server</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Copilot Financiero -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/finance/640x360/106" alt="Copilot Financiero" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Asistente Financiero con Copilot Studio</h3>
+                        <p class="text-gray-400 mb-4">Solución conversacional para análisis de estados financieros, generación de reportes y alertas regulatorias con integración a sistemas legacy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Copilot Studio</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Azure OpenAI</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">Power BI</span>
+                            <span class="text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded">SQL Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 - Chatbot Médico -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up">
+                    <img src="http://static.photos/medical/640x360/107" alt="Chatbot Médico" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Chatbot para Triage Médico</h3>
+                        <p class="text-gray-400 mb-4">Asistente virtual con NLP para clasificación de emergencias médicas, integrado con sistemas de salud y capaz de reducir tiempos de espera en 50%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Azure Bot Service</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">LUIS NLP</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Power Automate</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">HL7 Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 - Automatización Inteligente con UiPath y N8N -->
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/technology/640x360/108" alt="IA en RPA" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Automatización Inteligente con UiPath y N8N</h3>
+                        <p class="text-gray-400 mb-4">Arquitectura que integra UiPath para RPA, N8N para orquestación y modelos de IA para procesamiento de documentos complejos con 95% de precisión.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">UiPath</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">N8N</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Azure AI</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Document Intelligence</span>
+                            <span class="text-xs px-2 py-1 bg-purple-500 bg-opacity-20 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card rounded-xl overflow-hidden" data-aos="fade-up">
+                    <img src="http://static.photos/office/640x360/109" alt="N8N Facturación" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Automatización de Facturación con N8N</h3>
+                        <p class="text-gray-400 mb-4">Flujo de trabajo automatizado con N8N que integra ERP, CRM y sistemas de pago, procesando 5K facturas/mes con validación automática.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">N8N</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">Node.js</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">REST APIs</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">SQL Server</span>
+                            <span class="text-xs px-2 py-1 bg-blue-500 bg-opacity-20 rounded">PDF Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New Project - Automatización de Facturación con N8N -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Contácta<span class="gradient-text">me</span></h2>
+            
+            <div class="text-center" data-aos="fade-up">
+                <h3 class="text-2xl font-semibold mb-6">Hablemos de tu proyecto</h3>
+                <p class="mb-8 max-w-2xl mx-auto">Si estás buscando un experto en automatización, IA o soluciones Low-Code para transformar tus procesos empresariales, estaré encantado de ayudarte.</p>
+                
+                <div class="space-y-6 max-w-md mx-auto">
+                    <div class="flex items-center justify-center">
+                        <div class="p-3 rounded-full bg-blue-500 bg-opacity-20 mr-4">
+                            <i data-feather="mail" class="text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Correo electrónico</h4>
+                            <a href="mailto:carloseduardodecabo@gmail.com" class="text-blue-400 hover:text-blue-300">carloseduardodecabo@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <div class="p-3 rounded-full bg-purple-500 bg-opacity-20 mr-4">
+                            <i data-feather="phone" class="text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Teléfono</h4>
+                            <a href="tel:+541123891379" class="text-blue-400 hover:text-blue-300">+54 11 2389 1379</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <div class="p-3 rounded-full bg-green-500 bg-opacity-20 mr-4">
+                            <i data-feather="linkedin" class="text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">LinkedIn</h4>
+                            <a href="https://linkedin.com/in/carlos-de-cabo" target="_blank" class="text-blue-400 hover:text-blue-300">linkedin.com/in/carlos-de-cabo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">Carlos De Cabo</a>
+                    <p class="mt-2 text-gray-400">Transformando procesos con tecnología innovadora</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i data-feather="mail"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2023 Carlos De Cabo. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Privacidad</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Términos</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Initialize Vanta.js
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x111827,
+            size: 0.8
+        });
+        
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
